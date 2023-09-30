@@ -67,7 +67,7 @@
     </div>
     <div class="container text-center text-light mt-4 mb-4">Time: {{ roundStart }} — {{ roundEnd }}</div>
     <div class="container text-center mt-4">
-      <b-alert mt-4 mb-4 fade :show="systemAlert">{{ systemAlertMessage }}</b-alert>
+      <b-alert style="background-color: rgb(93, 93, 97, 0.5) !important;" variant="outline-primary" class="text-light mt-4 mb-4" fade :show="systemAlert">{{ systemAlertMessage }}</b-alert>
     </div>
     <BaseNetwork></BaseNetwork>
     <div class="container text-center mt-4">
@@ -220,7 +220,7 @@ export default Vue.extend({
       }
     },
     updateAll() {
-      getRoundTime().then((time) => {
+      getRoundTime().then((time) => {        
         this.roundStart = new Date(time.roundStart * 1000).toLocaleTimeString()
         this.roundEnd = new Date(time.roundEnd * 1000).toLocaleTimeString()
         this.roundStartTimestamp = time.roundStart * 1000

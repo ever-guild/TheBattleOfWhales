@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container text-center mt-4">
-      <b-alert mt-4 mb-4 fade :show="systemAlert">{{ systemAlertMessage }}</b-alert>
+      <b-alert style="background-color: rgb(93, 93, 97, 0.5) !important;" variant="outline-primary" class="text-light mt-4 mb-4" fade :show="systemAlert">{{ systemAlertMessage }}</b-alert>
     </div>
   </div>
 </template>
@@ -31,7 +31,7 @@ export default Vue.extend({
       if (typeof this.$network == 'undefined') return
       if (this.network !== this.$network) {
         this.systemAlert = true
-        this.systemAlertMessage = 'Switch EverWallet to the ' + this.network + ' network. You wallet now uses ' + this.$network
+        this.systemAlertMessage = 'Switch EverWallet to the ' + this.network + ' network. You wallet using ' + this.$network
       } else {
         this.systemAlert = false
       }
